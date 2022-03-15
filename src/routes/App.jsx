@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import Home from '../pages/Home';
-
+import Favoritos from '../pages/Favoritos';
 import NotFound from '../pages/NotFound';
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
@@ -18,7 +18,7 @@ const App = () => {
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                
+                    <Route path="/favoritos" element={ <Favoritos />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Layout>

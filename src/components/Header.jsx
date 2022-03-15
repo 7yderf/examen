@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import { Link } from 'react-router-dom';
 import '@styles/Header.scss';
 
 
@@ -11,10 +12,10 @@ const Header = () => {
 				{/* <img src={logo} alt="logo" className="nav-logo" /> */}
 				<ul>
 					<li>
-						<a href="/">Home</a>
+					<Link to="/">About</Link>
 					</li>
 					<li>
-						<a href="/favoritos">Favoritos</a>
+					<Link to="/favoritos">About</Link>
 					</li>
 					
 				</ul>

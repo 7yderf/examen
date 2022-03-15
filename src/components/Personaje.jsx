@@ -2,14 +2,17 @@ import React, {useContext} from 'react';
 // import '@styles/Personaje.scss';
 import AppContext from '../context/AppContext';
 
+const Personaje = ({personaje, index, favorito }) => {
 
-
-
-
-const Personaje = ({personaje, index}) => {
-	const {addFavorito } = useContext(AppContext)
+	const {state, addFavorito, removeFavorito} = useContext(AppContext)
 	const handleClick = item => {
 		addFavorito(item)
+	}
+
+	console.log("favoritos", favorito)
+
+	const handleClickRemove = item => {
+		removeFavorito(item)
 	}
 
 	return (
@@ -22,8 +25,11 @@ const Personaje = ({personaje, index}) => {
 					<p>Peso</p>
 					<p>Fecha de nacimiento</p>
 				</div>
-				<button  onClick={() => handleClick(personaje)}> añadir favorito </button>
-				
+				{
+					favorito  
+					? <button  onClick={() => handleClickRemove(personaje)}> quitar favorito </button>
+				 : <button  onClick={() => handleClick(personaje)}> añadir favorito </button>
+				}
 			</div>
 		</div>
 	);
