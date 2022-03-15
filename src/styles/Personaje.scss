@@ -1,0 +1,110 @@
+.Personaje {
+  display: flex;
+  width: 380px;
+  height: 300px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 0px 10px 30px #193c4a2e;
+
+
+  .Personaje-info {
+    z-index: 2;
+    padding-left: 25px;
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    color: #202020;
+    border-radius: 7px;
+    .nombrePersonaje {
+      font-size: 22px;
+      letter-spacing: 1.6px;
+    }
+    button {
+      text-decoration: none;
+      border: none;
+      padding: 8px 15px;
+      color: rgb(68, 68, 68);
+      border-radius: 3px;
+      font-size: 13px;
+      letter-spacing: 1.1px;
+      transition: 0.2s;
+      box-shadow: 2px 2px 5px 0px rgba(76,76,76,0.16);
+      &.add{
+        background: #beeacd;
+      }
+      &.remove{
+        background: rgb(241, 87, 87);
+        color: azure;
+      }
+      &.inactivo{
+        background: rgb(241, 235, 144);
+      }
+      &:hover {
+        opacity: 0.85;
+        transform: scale(0.98);
+        transition: 0.2s;
+      }
+
+    }
+  }
+  .cardImagen {
+    z-index: 0;
+    position: absolute;
+    width: 380px;
+    height: 300px;
+    border-radius: 7px;
+    img {
+      width: 380px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 7px;
+    }
+  }
+  .degradado {
+    z-index: 1;
+    position: absolute;
+    width: 380px;
+    height: 300px;
+    border-radius: 7px;
+    background: linear-gradient(
+      to right,
+      rgba(237, 237, 237, 1) 0%,
+      rgba(246, 246, 246, 0.88) 61%,
+      rgba(255, 255, 255, 0.81) 100%
+    );
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .Personaje {
+  
+    width: 280px;
+    height: 250px;
+    
+  
+    .cardImagen {
+      
+      width: 280px;
+      height: 250px;
+      
+      img {
+        width: 280px;
+        height: 250px;
+        
+      }
+    }
+    .degradado {
+      
+      width: 280px;
+      height: 250px;
+    }
+  }
+  
+}
+
+
+
+

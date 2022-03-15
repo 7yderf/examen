@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import AppContext from '../context/AppContext';
 import Personaje from '@components/Personaje';
 import {useGetpersonajes} from '../hooks/useGetpersonajes';
-// import '@styles/listPersonajes.scss';
+import '../styles/listPersonajes.scss';
 
 const API = 'https://swapi.dev/api/people/';
 

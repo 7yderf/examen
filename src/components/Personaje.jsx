@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-// import '@styles/Personaje.scss';
 import AppContext from '../context/AppContext';
+import '../styles/Personaje.scss';
+import imageCard from "../assets/imagen/backImage.jpg"
 
 const Personaje = ({personaje, index, favorito, add }) => {
 
@@ -18,18 +19,23 @@ const Personaje = ({personaje, index, favorito, add }) => {
 			
 			<div className="Personaje-info">
 				<div>
-					<p>{personaje.name}</p>
-					<p>Altura</p>
-					<p>Peso</p>
-					<p>Fecha de nacimiento</p>
+					<p className='nombrePersonaje'>{personaje.name}</p>
+					<p> Altura: {personaje.height}</p>
+					<p>Peso: {personaje.mass}</p>
+					<p>Cumpleaños: {personaje.birth_year}</p>
 				</div>
 				{
 					favorito  
-					? <button  onClick={() => handleClickRemove(personaje)}> quitar favorito </button>
+					? <button className='remove' onClick={() => handleClickRemove(personaje)}> Quitar favorito </button>
 				 : add 
-				 ? <button > añadido </button> 
-				 :<button  onClick={() => handleClick(personaje)}> añadir favorito </button>
+				 ? <button  className='inactivo'> Añadido </button> 
+				 :<button  className='add' onClick={() => handleClick(personaje)}> Añadir favorito </button>
 				}
+			</div>
+			<div className="cardImagen">
+				<img src={imageCard} alt="" />
+			</div>
+			<div className="degradado">
 			</div>
 		</div>
 	);
