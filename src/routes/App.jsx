@@ -6,7 +6,7 @@ import Favoritos from '../pages/Favoritos';
 import NotFound from '../pages/NotFound';
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
-// import '../styles/global.css';
+import '../styles/global.css';
 
 
 

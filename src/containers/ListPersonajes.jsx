@@ -6,33 +6,21 @@ import {useGetpersonajes} from '../hooks/useGetpersonajes';
 
 const API = 'https://swapi.dev/api/people/';
 
-
-
 const ListPersonajes = () => {
 	const {state} = useContext(AppContext)
-	console.log("state". state)
 	const [dataScroll, setDataScroll] = useState(1)
 	const [initialData, setInitialData] = useState([])
 	const [loading, setLoading] =useState(false)
 	
 	useEffect ( () => {
-
-	
 		useGetpersonajes(API, dataScroll, initialData.personaje)
 		.then ( success => {
-			console.log("success2", success)
 			setInitialData([...initialData, ...success])
 		})
 		.then (success => setLoading(true))
-		
-	
 	},[dataScroll])
 	
-	console.log("initialData", initialData)
-
-
 	window.onscroll = function(){
-		console.log("window.scroll", window.scroll)
 		if(
 			window.innerHeight + document.documentElement.scrollTop
 			=== document.documentElement.offsetHeight
@@ -40,8 +28,7 @@ const ListPersonajes = () => {
 			setDataScroll(dataScroll+1)
 		}
 	}
-	console.log("dataScroll", dataScroll)
-	
+
 	return (
 		<section className="main-container">
 			
