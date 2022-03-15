@@ -1,5 +1,5 @@
 
- const  useGetpersonajes = (API, page) => {
+ const  UseGetpersonajes = (API, page) => {
      
     let paginacion = false
     if (page > 0){
@@ -17,5 +17,5 @@
     })
 
 }
- export {useGetpersonajes}
+ export {UseGetpersonajes}
 
