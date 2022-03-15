@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import AppContext from '../context/AppContext';
 import Personaje from '@components/Personaje';
-import {UseGetpersonajes} from "../hooks/UseGetPersonajes"
+import { useGetData } from "@hooks/useGetData"
 import '../styles/listPersonajes.scss';
 
 const API = 'https://swapi.dev/api/people/';
@@ -13,7 +13,7 @@ const ListPersonajes = () => {
 	const [loading, setLoading] =useState(false)
 	
 	useEffect ( () => {
-		UseGetpersonajes(API, dataScroll, initialData.personaje)
+		useGetData(API, dataScroll, initialData.personaje)
 		.then ( success => {
 			setInitialData([...initialData, ...success])
 		})
