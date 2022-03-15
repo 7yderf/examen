@@ -7,7 +7,7 @@ const initialState = {
 const useInitialState = () => {
     const [state, setState] = useState(initialState)
 
-    const addfavorito = (payload) => {
+    const addFavorito = (payload) => {
 
         if (state.favorito.length === 0) {
             setState({
@@ -34,7 +34,7 @@ const useInitialState = () => {
 
     return {
         state,
-        addfavorito,
+        addFavorito,
         removeFavorito
     }
 }

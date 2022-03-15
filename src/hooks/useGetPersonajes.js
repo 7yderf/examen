@@ -10,7 +10,7 @@ const useGetpersonajes = (API) => {
 
 	useEffect (async ()=>{
 		const response = await axios(API);
-		setPersonaje(response);
+		setPersonaje(response.data.results);
         setLoading(false)
 	}, []);
     return { personaje, loading };

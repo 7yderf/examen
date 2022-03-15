@@ -9,16 +9,18 @@ const API = 'https://swapi.dev/api/people/';
 const ListPersonajes = () => {
 	
 	const {personaje, loading} = useGetpersonajes(API)
+	
 
 	console.log("personaje", personaje)
 	
 	return (
 		<section className="main-container">
 			
-			
+			{loading ? <div >...Cargando</div> : ""}
 			<div className="listPersonajes">
-				
-					<Personaje/>
+			{personaje.map((personaje, index) => (
+					<Personaje  personaje={personaje} key={personaje.name} index={index}/>
+			))}
 			
 				
 			</div>
