@@ -1,21 +1,22 @@
-import { useState, useEffect} from "react";
-import axios from 'axios';
 
+ const  useGetpersonajes = (API, page) => {
+    let paginacion = false
 
+    if (page > 0){
+         paginacion = API +"?page="+page
+         console.log("paginacion", paginacion)
+    }
 
-const useGetpersonajes = (API) => {
-    console.log("api", API)
-    const [personaje, setPersonaje] = useState([]);
-    const [loading, setLoading] = useState(true)
+    return new Promise ((resolve, reject) => {
 
-	useEffect (async ()=>{
-		const response = await axios(API);
-		setPersonaje(response.data.results);
-        setLoading(false)
-	}, []);
-    return { personaje, loading };
+        fetch(paginacion? paginacion : API)
+        .then(res => res.json())
+        .then(res => {
+            resolve(res.results)
+        })
 
+    })
 
 }
+ export {useGetpersonajes}
 
-export default useGetpersonajes;
