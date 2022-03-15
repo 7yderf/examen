@@ -30,8 +30,7 @@ const useInitialState = () => {
             favorito: [...state.favorito.filter(item => item.name != payload.name)]
         })
     }
-    console.log("state", state)
-
+    
     return {
         state,
         addFavorito,

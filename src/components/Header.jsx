@@ -8,7 +8,6 @@ const Header = () => {
 
 	return (
 		<nav>
-			{/* <img src={menu} alt="menu" className="menu" /> */}
 			<div className="navbar-left">
 				<ul>
 					<li>	<img src={logo} alt="logo" className="nav-logo" /></li>

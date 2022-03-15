@@ -9,7 +9,6 @@ const Favoritos = () => {
 	const { state, loading } = useContext(AppContext)
 	const arrayFavoritos = true
 
-	console.log("state", state)
 	return (
 		<section className="main-container">
 			
