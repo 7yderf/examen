@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
 import axios from 'axios';
 
-console.log("api")
+
 
 const useGetpersonajes = (API) => {
     console.log("api", API)
